@@ -37,7 +37,7 @@ function App() {
     
     <section className="container">
       
-      <h1>Hello World</h1>
+      <h1 className="text-red-400">Hello World</h1>
       
       <form action="" onSubmit={(e)=>handleSubmit(e)}>
         <input ref={inputRef} type="text" name="word" id="" minLength={5} maxLength={5} />
