@@ -37,14 +37,14 @@ function App() {
     
     <section className="container">
       
-      <h1 className="text-red-400">Hello World</h1>
+      <h1>Hello World</h1>
       
       <form action="" onSubmit={(e)=>handleSubmit(e)}>
         <input ref={inputRef} type="text" name="word" id="" minLength={5} maxLength={5} />
       </form>
 
-      <ul className="grid">
-      {guess.map(letter => <li>{letter}</li> )}
+      <ul className="grid gap-x-4">
+      {guess.map(letter => <li className="h-12 w-12 border border-white rounded-sm list-none flex justify-center items-center">{letter}</li> )}
       </ul>
 
     </section>
