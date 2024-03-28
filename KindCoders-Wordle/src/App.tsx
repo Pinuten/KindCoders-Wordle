@@ -1,4 +1,18 @@
+import { useRef, useState } from "react";
+
 function App() {
+
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [guess, setGuess] = useState<string[]>([])
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
+    e.preventDefault();
+
+    setGuess(inputRef.current!.value.split(""))
+    
+
+    inputRef.current!.value = "";
+  }
 
   return (
     
@@ -6,7 +20,14 @@ function App() {
       
       <h1>Hello World</h1>
       
-      <input type="text" name="" id="" />
+      <form action="" onSubmit={(e)=>handleSubmit(e)}>
+        <input ref={inputRef} type="text" name="word" id="" minLength={5} maxLength={5} />
+      </form>
+
+      <ul className="grid">
+      {guess.map(letter => <li>{letter}</li> )}
+      </ul>
+
       <ul className="grid">
       <li>h</li>
       <li>e</li>
@@ -14,6 +35,7 @@ function App() {
       <li>d</li>
       <li>å</li>
       </ul>
+
       <ul className="grid">
       <li>h</li>
       <li>e</li>
@@ -21,6 +43,7 @@ function App() {
       <li>d</li>
       <li>å</li>
       </ul>
+
       <ul className="grid">
       <li>h</li>
       <li>e</li>
@@ -28,6 +51,7 @@ function App() {
       <li>d</li>
       <li>å</li>
       </ul>
+
       <ul className="grid">
       <li>h</li>
       <li>e</li>
@@ -35,6 +59,7 @@ function App() {
       <li>d</li>
       <li>å</li>
       </ul>
+
       <ul className="grid">
       <li>h</li>
       <li>e</li>
