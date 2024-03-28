@@ -28,46 +28,8 @@ function App() {
       {guess.map(letter => <li>{letter}</li> )}
       </ul>
 
-      <ul className="grid">
-      <li>h</li>
-      <li>e</li>
-      <li>j</li>
-      <li>d</li>
-      <li>å</li>
-      </ul>
-
-      <ul className="grid">
-      <li>h</li>
-      <li>e</li>
-      <li>j</li>
-      <li>d</li>
-      <li>å</li>
-      </ul>
-
-      <ul className="grid">
-      <li>h</li>
-      <li>e</li>
-      <li>j</li>
-      <li>d</li>
-      <li>å</li>
-      </ul>
-
-      <ul className="grid">
-      <li>h</li>
-      <li>e</li>
-      <li>j</li>
-      <li>d</li>
-      <li>å</li>
-      </ul>
-
-      <ul className="grid">
-      <li>h</li>
-      <li>e</li>
-      <li>j</li>
-      <li>d</li>
-      <li>å</li>
-      </ul>
     </section>
+
   )
 }
 
