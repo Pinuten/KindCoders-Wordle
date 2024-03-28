@@ -6,7 +6,6 @@ type Props = {
 type Letter = {
     color: string,
     letter: string
-    ,
 }
 const generateLetters = (answer: string, guess: string): Letter[] => {
     let temp = answer;

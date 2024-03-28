@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import {promises as fs} from "fs";
+import { useRef, useState } from "react";
 import Board from "./components/Board";
 
 
@@ -8,18 +7,19 @@ function App() {
   const inputRef = useRef<HTMLInputElement>(null)
 
 
-  const [guess, setGuess] = useState<string>("")
+  const [guess, setGuess] = useState<string[]>([])
 
   const goalWord = "spook";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setGuess(inputRef.current!.value.toLowerCase());
+    setGuess([...guess, inputRef.current!.value.toLowerCase()]);
 
     inputRef.current!.value = "";
   }
 
+  
   return (
 
     <section className="container">
@@ -30,7 +30,9 @@ function App() {
         <input ref={inputRef} type="text" name="word" id="" minLength={5} maxLength={5} />
       </form>
 
-    <Board goalWord={goalWord} guess={guess}/>
+    {
+      guess.length > 0 && guess.map(guess => <Board goalWord={goalWord} guess={guess}/> )
+    }
 
       
 
