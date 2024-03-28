@@ -8,14 +8,14 @@ function App() {
   const inputRef = useRef<HTMLInputElement>(null)
 
 
-  const [guess, setGuess] = useState<string[]>([])
+  const [guess, setGuess] = useState<string>("")
 
   const goalWord = "spook";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setGuess(prevGuess => [...prevGuess, ...inputRef.current!.value.toLowerCase().split("")]);
+    setGuess(inputRef.current!.value.toLowerCase());
 
     inputRef.current!.value = "";
   }
